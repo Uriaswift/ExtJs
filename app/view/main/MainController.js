@@ -19,4 +19,3 @@ Ext.define('MyApp.view.main.MainController', {
         }
     }
 });
-

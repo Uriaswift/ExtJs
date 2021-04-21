@@ -14,9 +14,7 @@ Ext.define('MyApp.view.main.Main', {
 
         'MyApp.view.main.MainController',
         'MyApp.view.main.MainModel',
-        'MyApp.view.main.List',
-        'MyApp.view.main.Form',
-        'MyApp.classic.src.controller.FormController'
+        'MyApp.view.main.List'
     ],
 
     controller: 'main',
@@ -58,12 +56,6 @@ Ext.define('MyApp.view.main.Main', {
             bind: {
                 html: '{loremIpsum}'
             }
-        },{
-            title: 'Form',
-            iconCls: 'fa-cog',
-            items: [{
-                xtype: 'form-login'
-            }]
         }
     ]
 });

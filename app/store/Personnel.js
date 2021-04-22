@@ -2,16 +2,21 @@ Ext.define('MyApp.store.Personnel', {
     extend: 'Ext.data.Store',
 
     alias: 'store.personnel',
+    requires: [
+        'MyApp.app.model.UserModel'
+    ],
 
     fields: [
-        'name', 'email', 'phone'
+        'id', 'name'
     ],
 
     data: { items: [
-        { name: 'Jean Luc', email: "jeanluc.picard@enterprise.com", phone: "555-111-1111" },
-        { name: 'Worf',     email: "worf.moghsson@enterprise.com",  phone: "555-222-2222" },
-        { name: 'Deanna',   email: "deanna.troi@enterprise.com",    phone: "555-333-3333" },
-        { name: 'Data',     email: "mr.data@enterprise.com",        phone: "555-444-4444" }
+            {id: '{id}', name: '{name}'}
+
+        //     { id: 'Jean Luc', name: "jeanluc.picard@enterprise.com" },
+    //     { id: 'Worf',     name: "worf.moghsson@enterprise.com" },
+    //     { id: 'Deanna',   name: "deanna.troi@enterprise.com"},
+    //     { id: 'Data',     name: "mr.data@enterprise.com" }
     ]},
 
     proxy: {

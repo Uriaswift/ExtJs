@@ -79,6 +79,7 @@ Ext.define('MyApp.view.main.Main', {
         title: 'Home',
         iconCls: 'fa-home',
         // The following grid shares a store with the classic version's grid as well!
+        scrollable: true,
         items: [{
             xtype: 'mainlist'
         }]

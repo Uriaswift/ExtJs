@@ -1,29 +1,22 @@
 Ext.define('MyApp.store.Personnel', {
     extend: 'Ext.data.Store',
-
     alias: 'store.personnel',
+    pageSize: 5,
     requires: [
-        'MyApp.app.model.UserModel'
+        'MyApp.app.model.UserModel',
     ],
-
-    fields: [
-        'id', 'name'
-    ],
-
-    data: { items: [
-            {id: '{id}', name: '{name}'}
-
-        //     { id: 'Jean Luc', name: "jeanluc.picard@enterprise.com" },
-    //     { id: 'Worf',     name: "worf.moghsson@enterprise.com" },
-    //     { id: 'Deanna',   name: "deanna.troi@enterprise.com"},
-    //     { id: 'Data',     name: "mr.data@enterprise.com" }
-    ]},
+    type: 'ajax',
+    model: 'MyApp.app.model.UserModel',
 
     proxy: {
-        type: 'memory',
+        type: 'rest',
+        url: 'https://retoolapi.dev/0TUXls/extjs',
         reader: {
             type: 'json',
-            rootProperty: 'items'
+            totalProperty: 'total',
+            rootProperty: 'users'
         }
-    }
+    },
+    autoLoad: true
+
 });

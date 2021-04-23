@@ -78,11 +78,17 @@ Ext.define('MyApp.view.main.Main', {
     items: [{
         title: 'Home',
         iconCls: 'fa-home',
-        // The following grid shares a store with the classic version's grid as well!
         scrollable: true,
         items: [{
             xtype: 'mainlist'
-        }]
+        }],
+        pageSize: 5,
+        bbar: {
+            xtype: 'pagingtoolbar',
+            displayInfo: true,
+            displayMsg: 'Displaying {0} to {1} of {2} &nbsp;records ',
+            emptyMsg: "No records to display&nbsp;"
+        }
     }, {
         title: 'Users',
         iconCls: 'fa-user',

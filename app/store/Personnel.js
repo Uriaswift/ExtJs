@@ -1,7 +1,9 @@
 Ext.define('MyApp.store.Personnel', {
     extend: 'Ext.data.Store',
     alias: 'store.personnel',
+    autoLoad: {start: 0, limit: 5},
     pageSize: 5,
+    remoteSort: true,
     requires: [
         'MyApp.app.model.UserModel',
     ],
@@ -13,10 +15,8 @@ Ext.define('MyApp.store.Personnel', {
         url: 'https://retoolapi.dev/0TUXls/extjs',
         reader: {
             type: 'json',
-            totalProperty: 'total',
-            rootProperty: 'users'
+            totalProperty: 'TotalCount',
+            rootProperty: 'Users'
         }
-    },
-    autoLoad: true
-
+    }
 });
